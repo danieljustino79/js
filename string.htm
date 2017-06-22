@@ -13,48 +13,123 @@
   <div class="row">
     <div class="col-md-12">
       <h1>JavaScript</h1>
-      <div class="list-group">
-  <a href="#" class="list-group-item active">
-    Dicas
-  </a>
-  <a href="string.htm" class="list-group-item">String - Data Types</a>
-  <a href="number.htm" class="list-group-item">Number - Data Types</a>
-  <a href="#" class="list-group-item">Array - Data Types</a>
-  <a href="#" class="list-group-item">Object - Data Types</a>
-</div>
-      <p>String - Data Types</p>
+      <h2>String</h2>
+      <p>Data Type</p>
+      <p>fontes: <a href="https://www.w3schools.com/jsref/jsref_obj_string.asp">w3school ref</a>, 
+      <a href="https://www.w3schools.com/js/js_strings.asp">w3school</a>, <a href="http://devdocs.io/javascript/">devdocs.oi MDN</a></p>
+      <p>new String() - deve-se aplicar o método toString() para o operador == funcionar como desejado.</p>
       <pre>
 var palavra = 'palavra ou frase';
-var palavraDataType = typeof(palavra); //--string
+var palavraDT = typeof(palavra); //--string
+var palavraObjeto = new String('palavra2');
+var palavraObjetoDT = typeof(palavraObjeto); //--object
 
 var nulo = null;
 var nuloDataType = typeof(nulo); //--null
 var indefinido;
-var indefinidoDataType = typeof(indefinido); //--undefined
+var indefinidoDT = typeof(indefinido); //--undefined
 
 var vetor = [];
 var objeto = {};        
-var vetorDataType = typeof(vetor);   //--object
-var objetoDataType = typeof(objeto); //--object</pre>
+var vetorDT = typeof(vetor);   //--object
+var objetoDT = typeof(objeto); //--object</pre>
+
+<p>Propriedade e métodos<br>
+indexOf(search) - começa de 0 e é case sensitive<br>
+split(separator) - retorna um array<br>
+substr(start, length) - retorna um intervalo de uma posição + uma quantidade<br>
+substring(start, end) - retorna um intervalo da posição 1 ate a posição 2<br>
+toLowerCase(), toUpperCase(), trim(), lastIndexOf()</p>
+
+<pre>
+ var v1 = 'ok Google'; 
+ console.log(v1.length) //--9
+
+ var pos = v1.indexOf('G');
+ console.log(pos) //--3
+ var pos2 = v1.indexOf('g');
+ console.log(pos2) //--6
+
+ var vet = 'um;array;sera;criado'.split(';');
+ console.log(vet.toString()+' de tamanho: '+vet.length) //--4
+
+ var v2 = 'teste, uma frase de teste.';
+ console.log(v2.substr(7, 10));    //--uma frase
+ console.log(v2.substring(7, 16)); //--uma frase
+</pre>
+<p>Util</p>
+<pre>
+ function IsUndefinedOrNullOrEmpty(str) {
+    if (typeof (str) === 'undefined')
+        return true;
+    else if (str == null)
+        return true;
+    else if ((str.trim()).length == 0)
+        return true;
+    else return false;
+}
+
+var teste;
+teste = null;
+teste = '';
+teste = ' ';
+if(IsUndefinedOrNullOrEmpty(teste))
+console.log('UndefinedOrNullOrEmpty');
+else
+console.log('falha');</pre>
+
     </div>
   </div>
 </div>
-<!--GitHub Pages
-npm init - cria uma arquivo package.json-->
-Função baseada em C#
-<script src="https://gist.github.com/danieljustino79/daf3a9a547d7007354db298fb57b31a5.js"></script>
-Teste Jquery
-<script src="https://gist.github.com/danieljustino79/73f3d7112759dfa9c8cbfec61ba29d56.js"></script>
+
 </body>
 <script
   src="https://code.jquery.com/jquery-1.12.4.min.js"
   integrity="sha256-ZosEbRLbNQzLpnKIkEdrPv7lOy9C27hHQ+Xp8a4MxAQ=" crossorigin="anonymous"></script>
 <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js" 
 integrity="sha384-Tc5IQib027qvyjSMfHjOMaLkfuWVxZxUPnCJA7l2mCWNIpG9mGCD8wGNIcPD7Txa" crossorigin="anonymous"></script>
-
 <script>
 $(document).ready(function () {
-//console.log('Jquery ok');
+var palavra = 'palavra ou frase';
+var palavraDT = typeof(palavra); //--string
+console.log(palavraDT)
+var palavraObjeto = new String('palavra2');
+var palavraObjetoDT = typeof(palavraObjeto); //---object
+console.log(palavraObjetoDT)
+
+var v1 = 'ok Google'; 
+ console.log(v1.length) //--9
+
+ var pos = v1.indexOf('G');
+ console.log(pos) //--3
+ var pos2 = v1.indexOf('g');
+ console.log(pos2) //--6
+
+ var vet = 'um;array;sera;criado'.split(';');
+ console.log(vet.toString()+' de tamanho: '+vet.length) //--4
+
+ var v2 = 'teste, uma frase de teste.';
+ console.log(v2.substr(7, 10));    //--uma frase
+ console.log(v2.substring(7, 16)); //--uma frase
+
+  function IsUndefinedOrNullOrEmpty(str) {
+    if (typeof (str) === 'undefined')
+        return true;
+    else if (str == null)
+        return true;
+    else if ((str.trim()).length == 0)
+        return true;
+    else return false;
+}
+
+var teste;
+teste = null;
+teste = '';
+teste = ' ';
+if(IsUndefinedOrNullOrEmpty(teste))
+console.log('UndefinedOrNullOrEmpty');
+else
+console.log('falha');
 });
 </script>
 </html>
