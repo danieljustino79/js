@@ -1,0 +1,96 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+
+<title>GitHub Pages JS</title>
+<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css" >
+<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap-theme.min.css" >
+</head>
+<body>
+  <div class="container-fluid">
+  <div class="row">
+    <div class="col-md-12">
+      <h1>JavaScript</h1>
+      <h2>Number</h2>
+      <p>Data Type</p>
+      <p>fontes: <a href="https://www.w3schools.com/jsref/jsref_number.asp">w3school ref</a>, 
+      <a href="https://www.w3schools.com/js/js_numbers.asp">w3school</a>, <a href="http://devdocs.io/javascript/">devdocs.oi MDN</a></p>
+      <p>new Number() - deve-se aplicar o método toString() para o operador == funcionar como desejado.</p>
+      <pre>
+var numero = 123;
+var numeroDT = typeof(numero); //--number
+var numeroObjeto = new Number(456);
+var numeroObjetoDT = typeof(numeroObjeto); //--object
+var decimal = 10.45;
+var decimalDT = typeof(decimal); //--number
+var hexa = 0xFF; 
+var hexaDT = typeof(hexa); //--number
+
+var nulo = null;
+var nuloDataType = typeof(nulo); //--null
+var indefinido;
+var indefinidoDT = typeof(indefinido); //--undefined
+
+var vetor = [];
+var objeto = {};        
+var vetorDT = typeof(vetor);   //--object
+var objetoDT = typeof(objeto); //--object</pre>
+
+<p>NaN (Not a Number)</p>
+<pre>
+var teste = 'ok';
+if(isNaN(teste))
+ console.log('não é um número')
+else
+ console.log('é um número')</pre>
+
+ <p>Propriedade e métodos<br>
+toFixed(precision) - arrendodamento e preenchimento<br>
+valueOf() - retorna o numero de um objeto<br>
+parseInt() - decimal para inteiro<br>
+toPrecision()</p>
+
+<pre>
+ var v1 = 12.7; 
+ console.log(v1.toFixed(2) //--12.70
+
+ var v2 = new Number(2) ;
+console.log(typeof(v2))           //--object
+console.log(typeof(v2.valueOf())) //--number
+</pre>
+    </div>
+  </div>
+</div>
+
+</body>
+<script
+  src="https://code.jquery.com/jquery-1.12.4.min.js"
+  integrity="sha256-ZosEbRLbNQzLpnKIkEdrPv7lOy9C27hHQ+Xp8a4MxAQ=" crossorigin="anonymous"></script>
+<script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js" 
+integrity="sha384-Tc5IQib027qvyjSMfHjOMaLkfuWVxZxUPnCJA7l2mCWNIpG9mGCD8wGNIcPD7Txa" crossorigin="anonymous"></script>
+<script>
+$(document).ready(function () {
+var decimal = 10.45;
+var decimalDT = typeof(decimal); //--number
+console.log(decimalDT)
+var hexa = 0xFF; 
+var hexaDT = typeof(hexa);
+console.log(hexaDT)
+
+var teste = 'ok';
+if(isNaN(teste))
+console.log('não é um número')
+else
+console.log('é um número')
+
+var v1 = 12.7; 
+ console.log(v1.toFixed(2)) //--12.70
+
+var v2 = new Number(2) ;
+console.log(typeof(v2))           //--object
+console.log(typeof(v2.valueOf())) //--number
+});
+</script>
+</html>
