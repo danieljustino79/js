@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+
+<title>GitHub Pages JS</title>
+<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css" >
+<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap-theme.min.css" >
+</head>
+<body>
+  <div class="container-fluid">
+  <div class="row">
+    <div class="col-md-12">
+      <h1>JavaScript</h1>
+      <h2>Date</h2>
+      <p>Data Type</p>
+      <p>fontes: <a href="https://www.w3schools.com/jsref/jsref_obj_date.asp">w3school ref</a>, 
+      <a href="https://www.w3schools.com/js/js_dates.asp">w3school</a>, <a href="http://devdocs.io/javascript/">devdocs.oi MDN</a></p>
+      <p>new Date() - possui x assinaturas, que retornam object</p>
+      <pre>var d = new Date(2017, 5);  //--retorna o 1º dia do mês de Junho
+var d2 = new Date(2017, 5, 2, 25);     //--retorna o dia 3 de Junho às 1:00
+var d3 = new Date(2017, 5, 2, 10, 61); //--retorna o dia 2 de Junho as 11:01
+var d4 = new Date(2017, 5, 2, 10, 10, 5, 5); //---assinatura vai ate o milisegundo
+      </pre>
+
+<p>Propriedade e métodos<br>
+getFullYear() - ano<br>
+getMonth() - mês (0 janeiro)<br>
+getDate() - dia<br>
+getDay() - dia da semana (0 domingo)<br>
+getHours() - hora<br>
+getUTCHours() - hora sem fuso horário (Universal Coordinated Time (UTC)), Brasília +3<br>
+getMinutes(), getSeconds()<br>
+getTime() - milisegundos desde 1970
+</p>
+<hr>
+<p>toLocaleString() - data com string, hora local (Brasília) yyyy-mm-dd hh:mm:ss<br>
+toISOString() - data com string, sem sem fuso horário yyyy-mm-ddThh:mm:ss.mmmZ - toJSON()<br>
+toLocaleDateString() - yyy-m-dd<br>
+toLocaleTimeString() - hh:mm:ss<br>
+toString(), toTimeString()</p>
+<hr>
+<p>now(), parse() - statics Date.now(); Date.parse()</p>
+    </div>
+  </div>
+</div>
+
+</body>
+<script
+  src="https://code.jquery.com/jquery-1.12.4.min.js"
+  integrity="sha256-ZosEbRLbNQzLpnKIkEdrPv7lOy9C27hHQ+Xp8a4MxAQ=" crossorigin="anonymous"></script>
+<script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js" 
+integrity="sha384-Tc5IQib027qvyjSMfHjOMaLkfuWVxZxUPnCJA7l2mCWNIpG9mGCD8wGNIcPD7Txa" crossorigin="anonymous"></script>
+<script>
+$(document).ready(function () {
+//--jquery
+});
+</script>
+</html>
