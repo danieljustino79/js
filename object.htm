@@ -13,35 +13,53 @@
   <div class="row">
     <div class="col-md-12">
       <h1>JavaScript</h1>
-      <div class="list-group">
-  <a href="#" class="list-group-item active">
-    Dicas
-  </a>
-  <a href="string.htm" class="list-group-item">String - Data Types</a>
-  <a href="number.htm" class="list-group-item">Number - Data Types</a>
-  <a href="date.htm" class="list-group-item">Date - Data Types</a>
-  <a href="#" class="list-group-item">Array - Data Types</a>
-  <a href="#" class="list-group-item">Object - Data Types</a>
-  <a href="#" class="list-group-item">Json</a>
-</div>      
+      <h2>Object</h2>
+      <p>Data Type</p>
+      <pre>var d = {};
+var d2 = { campo1: 'valorA', campo2: 'valorB' };
+var objeto = {
+ nome: 'Sam',
+ nota: 9,
+ data: '10/01/2017'
+};</pre>
+<p>Prototype</p>
+<pre>
+ var obj1 = {}; //--primitivo executa mais rápido
+ obj1.nome = 'Sam';
+ obj1.sobrenome = 'Yan';
+
+ var obj1 = new Object();
+ obj1.nome = 'Ana';
+ obj1.sobrenome = 'de Sa';</pre>
+
+<p>Construtor</p>
+<pre>
+ function UsuarioVM(_nome, _sobrenome, _idade){
+  this.Nome = _nome;
+  this.Sobrenome = _sobrenome;
+  this.Idade = _idade;
+ }
+
+ var usuarioVM = new UsuarioVM('Sam', 'Yan', 20);</pre>
+ <p>Acesso</p>
+ <pre>
+var d2 = { campo1: 'valorA', campo2: 'valorB' };
+console.log(d2.campo1+', '+d2['campo2']) </pre>
     </div>
   </div>
 </div>
+
 </body>
 <script
   src="https://code.jquery.com/jquery-1.12.4.min.js"
   integrity="sha256-ZosEbRLbNQzLpnKIkEdrPv7lOy9C27hHQ+Xp8a4MxAQ=" crossorigin="anonymous"></script>
 <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js" 
 integrity="sha384-Tc5IQib027qvyjSMfHjOMaLkfuWVxZxUPnCJA7l2mCWNIpG9mGCD8wGNIcPD7Txa" crossorigin="anonymous"></script>
-  <script>$(document).ready(function () {
-console.log('Jquery ok');
-});</script>
 <script>
-var vetor = [];
-var objeto = {};
-        var vetorDataType = typeof(vetor);
-        var objetoDataType = typeof(objeto);
-        console.log(vetorDataType);
-        console.log(objetoDataType);
-        </script>
+$(document).ready(function () {
+//--jquery
+});
+var d2 = { campo1: 'valorA', campo2: 'valorB' };
+console.log(d2.campo1+', '+d2['campo2'])
+</script>
 </html>
