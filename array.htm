@@ -1,0 +1,90 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+
+<title>GitHub Pages JS</title>
+<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css" >
+<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap-theme.min.css" >
+</head>
+<body>
+  <div class="container-fluid">
+  <div class="row">
+   <!-- -->
+      <div class="col-md-12">
+      <h1>JavaScript</h1>
+      <h2>Array</h2>
+      <p>Data Type</p>
+      <p>fontes: <a href="https://www.w3schools.com/jsref/jsref_obj_array.asp">w3school ref</a>, 
+      <a href="https://www.w3schools.com/js/js_arrays.asp">w3school</a>, <a href="http://devdocs.io/javascript/">devdocs.oi MDN</a></p>
+      <p>Array retorna object e pode ser criado por atribuição ou instância</p>
+      <pre>var vet = []; //--primitivo executa mais rápido
+var vet2 = [10, 20, 50];          
+var vet3 = new Array(10, 20, 50);
+var vet4 = [{campo1:'Sam', campo2:1}, {campo1:'Ana', campo2:2}];</pre>
+
+<p>Propriedade e métodos<br>
+length - númenro de posições do array<br>
+toString() - escreve o array separado por virgula<br>
+join() - escreve o array separado pelo parametro<br>
+isArray()</p>
+<pre>
+var vet = [10, 20, 30];    
+console.log(vet.lenght) //---3
+
+var i;
+var resultado = '';
+for(i=0; i&lt;vet.length; i++)
+ resultado += vet[i] + ';';
+console.log(resultado) //---10;20;30;
+
+console.log(vet.toString()) //---10,20,30
+
+console.log(vet.join(' | ')) //---10 | 20 | 30
+</pre>
+<p>push() - adicionar na última posição<br>
+unshift() - adiciona na 1º posição<br>
+pop() - remove a última posição e retorna o conteúdo<br>
+shift() - remove a 1º posição<br>
+</p>
+<hr>
+<p>Destaques</p>
+concat()	Joins two arrays, and returns a copy<br>
+indexOf()	Search the array for an element and returns its position<br>
+lastIndexOf()	Search the array for an element, starting at the end, and returns its position<br>
+slice()	Selects a part of an array, and returns the new array<br>
+splice()	Adds/Removes elements from an array<br>
+filter(), find(), findIndex(), forEach(), map(), reverse(), sort(), fonte:<a href="https://www.w3schools.com/js/js_array_sort.asp"> js_array_sort</a>
+    </div>
+    <script>
+var vet = [10, 20, 30];
+console.log(vet.length) //---3
+var i;
+var resultado = '';
+for(i=0; i<vet.length; i++)
+ resultado += vet[i] + ';';
+ console.log(resultado) 
+//---10;20;30;  
+console.log(vet.join(' | ')) //---10 | 20 | 30
+
+//var c = vet.pop();
+var c = vet.shift();
+console.log(c)
+</script>
+    </div>
+  </div>
+</div>
+
+</body>
+<script
+  src="https://code.jquery.com/jquery-1.12.4.min.js"
+  integrity="sha256-ZosEbRLbNQzLpnKIkEdrPv7lOy9C27hHQ+Xp8a4MxAQ=" crossorigin="anonymous"></script>
+<script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js" 
+integrity="sha384-Tc5IQib027qvyjSMfHjOMaLkfuWVxZxUPnCJA7l2mCWNIpG9mGCD8wGNIcPD7Txa" crossorigin="anonymous"></script>
+<script>
+$(document).ready(function () {
+//--jquery
+});
+</script>
+</html>
