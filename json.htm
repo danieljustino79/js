@@ -37,7 +37,7 @@ console.log(json.cliente[0].nome)        //---Sam</pre>
 <p>Converter uma string para Json com parse(), situação que ocorre quando o Ajax recebe dados de um WebService</p>
 <pre>var texto = '{"nome":"Sam","fone":9988}';
 var json = JSON.parse(texto);
-console.log(json.fone) //---9988
+console.log(json.fone) //---9988</pre>
 <p>Expor dados Json para outrs tecnologias</p>
 <pre>var json = [{ 'nome':'Sam', 'fone':9988 }, { 'nome':'Sam', 'fone':9977 }];
   var expor = JSON.stringify(json);
