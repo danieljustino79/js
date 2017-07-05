@@ -1,0 +1,84 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+
+<title>GitHub Pages JS</title>
+<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css" >
+<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap-theme.min.css" >
+</head>
+<body>
+  <div class="container-fluid">
+  <div class="row">
+    <div class="col-md-12">
+      <h1>JavaScript</h1>
+      <h2>JSON stands for JavaScript Object Notation</h2>
+      <p>sintaxe</p>
+      <p>fontes: <a href="https://www.w3schools.com/js/js_json.asp">w3school</a>, 
+      <a href="https://www.w3schools.com/js/js_json_intro.asp">Json</a>
+      <a href="http://devdocs.io/javascript/">devdocs.oi MDN</a></p>
+      <p>Json é uma variação do JavaScript Object, podendo ser representado de 3 formas</p>
+      <pre>var json = { nome:'Sam', 'fone':9988 };
+console.log(json.nome)    //---Sam
+console.log(json['nome']) //---Sam</pre>
+      <pre>var json = [{ 'nome':'Sam', 'fone':9988 }, { 'nome':'Sam', 'fone':9977 }];
+console.log(json[0].nome)        //---Sam
+console.log(Array.isArray(json)) //---true
+      </pre>
+      <pre>
+var json = { 'cliente': [
+ {'nome':'Sam', 'fone':9988 },
+ {'nome':'Ana', 'fone':9977 }
+]}
+
+console.log(Array.isArray(json.cliente)) //---true
+console.log(json.cliente[0].nome)        //---Sam</pre>
+<p>Converter uma string para Json com parse(), situação que ocorre quando o Ajax recebe dados de um WebService</p>
+<pre>var texto = '{"nome":"Sam","fone":9988}';
+var json = JSON.parse(texto);
+console.log(json.fone) //---9988
+<p>Expor dados Json para outrs tecnologias</p>
+<pre>var json = [{ 'nome':'Sam', 'fone':9988 }, { 'nome':'Sam', 'fone':9977 }];
+  var expor = JSON.stringify(json);
+  var destino = 'destino.aspx?dados=' + expor;
+</pre>
+
+<p>https://www.w3schools.com/js/js_json_arrays.asp</p>
+
+<p>JSON arquivo usa a extensão .json e o MIME type é application/json</p>
+    </div>
+  </div>
+</div>
+
+</body>
+<script
+  src="https://code.jquery.com/jquery-1.12.4.min.js"
+  integrity="sha256-ZosEbRLbNQzLpnKIkEdrPv7lOy9C27hHQ+Xp8a4MxAQ=" crossorigin="anonymous"></script>
+<script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js" 
+integrity="sha384-Tc5IQib027qvyjSMfHjOMaLkfuWVxZxUPnCJA7l2mCWNIpG9mGCD8wGNIcPD7Txa" crossorigin="anonymous"></script>
+<script>
+$(document).ready(function () {
+//--jquery
+});
+var json = { nome:'Sam', 'fone':2233 };
+console.log('j:'+json.nome)
+console.log('j:'+json['nome'])
+
+var obj = { 'cliente': [
+ {'nome':'Sam', 'fone':9988 },
+ {'nome':'Ana', 'fone':9977 }
+]};
+
+console.log(Array.isArray(obj.cliente)) //---true
+console.log(obj.cliente[0].nome)        //---Sam
+
+var texto = '{"nome":"Sam","fone":9988}';
+var json = JSON.parse(texto);
+console.log(json.fone) //---9988
+
+var json = [{ 'nome':'Sam', 'fone':9988 }, { 'nome':'Sam', 'fone':9977 }];
+  var expor = JSON.stringify(json);
+  var destino = 'destino.aspx?dados=' + expor;
+</script>
+</html>
