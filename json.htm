@@ -22,7 +22,7 @@
       <pre>var json = { nome:'Sam', 'fone':9988 };
 console.log(json.nome)    //---Sam
 console.log(json['nome']) //---Sam</pre>
-      <pre>var json = [{ 'nome':'Sam', 'fone':9988 }, { 'nome':'Sam', 'fone':9977 }];
+      <pre>var json = [{ 'nome':'Sam', 'fone':9988 }, { 'nome':'Dan', 'fone':9977 }];
 console.log(json[0].nome)        //---Sam
 console.log(Array.isArray(json)) //---true
       </pre>
@@ -45,8 +45,24 @@ console.log(json.fone) //---9988</pre>
 </pre>
 
 <p>https://www.w3schools.com/js/js_json_arrays.asp</p>
+<p>For vs Jquery.each</p>
+<pre>var json = [{ nome:'Sam', fone:9988 }, { nome:'Dan', fone:9977 }];
 
-<p>JSON arquivo usa a extensão .json e o MIME type é application/json</p>
+var nomes;  
+for (i in json) {
+    nomes += json[i].nome;
+}  
+console.log(nomes)
+</pre>
+Versão Jquery
+<pre>var jnomes;
+$.each(json, function(i, item){
+ jnomes += item.nome
+})
+console.log('J:'+jnomes)</pre>
+
+<p>JSON arquivo usa a extensão .json e o MIME type é application/json<br>
+<a href="https://www.w3schools.com/js/js_json_jsonp.asp">JSONP</a> cross-domain</p>
     </div>
   </div>
 </div>
@@ -80,5 +96,19 @@ console.log(json.fone) //---9988
 var json = [{ 'nome':'Sam', 'fone':9988 }, { 'nome':'Sam', 'fone':9977 }];
   var expor = JSON.stringify(json);
   var destino = 'destino.aspx?dados=' + expor;
+
+  var json = [{ nome:'Sam', fone:9988 }, { nome:'Dan', fone:9977 }];
+
+var nomes;  
+for (i in json) {
+    nomes += json[i].nome;
+}  
+console.log(nomes)
+
+var jnomes;
+$.each(json, function(i, item){
+ jnomes += item.nome
+})
+console.log('J:'+jnomes)
 </script>
 </html>
