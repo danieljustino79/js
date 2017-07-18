@@ -1,0 +1,88 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+
+<title>GitHub Pages JS</title>
+<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css" >
+<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap-theme.min.css" >
+</head>
+<body>
+  <div class="container-fluid">
+  <div class="row">
+   <!-- -->
+      <div class="col-md-12">
+      <h1>JavaScript</h1>
+      <h2>Functions</h2>
+      <p>fontes: <a href="https://www.w3schools.com/js/js_functions.asp">w3school ref</a></p>
+      <pre>var index=0;
+
+//---function declarada
+contador();
+function contador(){
+ alert(index);
+ index++;
+}
+contador();</pre>
+<pre>//---function anonima
+//---contadorAnonimo();
+//---Uncaught TypeError: contadorAnonimo is not a function
+var contadorAnonimo = function(){
+ alert(index);
+ index++;
+}
+contadorAnonimo();</pre>
+<p>var ehNumero = isNaN('11');<br>
+console.log(ehNumero) //---false</p>
+<p>var calculo = eval('5+5');<br>
+console.log(calculo)  //---10</p>
+
+<p>var url = encodeURI('http://teste.aspx?p1=frase espaço e opção'); <br>
+console.log(url) //---http://teste.aspx?p1=frase%20espa%C3%A7o%20e%20op%C3%A7%C3%A3o<br>
+var code = decodeURI(url);<br>
+console.log(code) //---http://teste.aspx?p1=frase espaço e opção</p>
+
+<p>url = encodeURIComponent('http://teste.aspx?p1=frase espaço e opção'); <br>
+console.log(url) //---http%3A%2F%2Fteste.aspx%3Fp1%3Dfrase%20espa%C3%A7o%20e%20op%C3%A7%C3%A3o
+code = decodeURIComponent(url); <br>
+console.log(code) //---http://teste.aspx?p1=frase espaço e opção</p>
+
+
+Number()	Converts an object's value to a number
+parseFloat()	Parses a string and returns a floating point number
+parseInt()</p>
+    </div>
+    <script>
+    var ehNumero = isNaN('11')
+console.log(ehNumero)
+
+var calculo = eval('5+5');
+console.log(calculo)
+
+    var url = encodeURI('http://teste.aspx?p1=frase espaço e opção');
+console.log(url)
+var code = decodeURI(url)
+console.log(code)
+
+url = encodeURIComponent('http://teste.aspx?p1=frase espaço e opção');
+console.log(url)
+code = decodeURIComponent(url)
+console.log(code)
+</script>
+    </div>
+  </div>
+</div>
+
+</body>
+<script
+  src="https://code.jquery.com/jquery-1.12.4.min.js"
+  integrity="sha256-ZosEbRLbNQzLpnKIkEdrPv7lOy9C27hHQ+Xp8a4MxAQ=" crossorigin="anonymous"></script>
+<script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js" 
+integrity="sha384-Tc5IQib027qvyjSMfHjOMaLkfuWVxZxUPnCJA7l2mCWNIpG9mGCD8wGNIcPD7Txa" crossorigin="anonymous"></script>
+<script>
+$(document).ready(function () {
+//--jquery
+});
+</script>
+</html>
