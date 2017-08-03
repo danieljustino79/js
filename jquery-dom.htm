@@ -1,0 +1,287 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+
+<title>GitHub Pages JS</title>
+<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css" >
+<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap-theme.min.css" >
+</head>
+<body>
+  <div class="container-fluid">
+  <div class="row">
+   <!-- -->
+      <div class="col-md-12">
+      <h1>JQuery</h1>
+      <h2>DOM (Traversing - Tree Traversal)</h2>
+      <p>Selectors</p>
+      <p>fontes: <a href="https://www.w3schools.com/jquery/jquery_selectors.asp">w3school ref</a>, 
+      <a href="http://api.jquery.com/category/selectors/">Jquery API</a> e <a href="https://www.w3schools.com/jquery/jquery_ref_selectors.asp">w3school ref</a></p>
+      <p>Seletor por tag, id, class ou expressão</p>
+      <pre>&lt;b&gt;teste&lt;/b&gt;
+&lt;div id='div1'&gt;&lt;/div&gt;
+&lt;div class="div2"&gt;&lt;/div&gt;
+
+&lt;script&gt;
+ $('b').text('Jquery ok');
+ $('#div1').text('Jquery ok 2');
+ $('.div2').text('Jquery ok 3');
+&lt;/script&gt;      
+      </pre>
+
+      <b>teste</b>
+      <div id='div1'></div>
+      <div class="div2"></div>
+
+<hr>
+      <p>.text() x .html() x val()</p>      
+      <pre>&lt;div id='divTexto'&gt;&lt;/div&gt;
+&lt;div id='divHtml'&gt;&lt;/div&gt;
+&lt;input type="text" id="inputValor"&gt;
+
+$('#divTexto').text('jquery texto');
+$('#divHtml').html('&lt;b&gt;Jquery Html tag&lt;/b&gt;');
+$('#inputValor').val('Jquery input texto');</pre>
+
+          <div id='divTexto'></div>
+          <div id='divHtml'></div>
+          <input type="text" id="inputValor">
+
+<hr>
+<p>Atributos: .prop() e .data()</p>
+<pre>&lt;div id="divId" class="divClass" data-extra="Jquery atributo extra"&gt;&lt;/div&gt;
+&lt;input type="checkbox" id="c1"&gt;
+
+var classe = $('#divId').prop('class');
+var data = $('#divId').data('extra');
+$('#divId').text(classe + ' - ' + data);
+$('#c1').prop('checked', true);</pre>
+<div id="divId" class="divClass" data-extra="Jquery atributo extra"></div>
+<input type="checkbox" id="c1">
+
+<hr>
+<p>Style .css()</p>
+<pre></pre>
+
+
+<hr>
+<p>.prepend(), .append()</p>
+<pre>&lt;div id="divConcatenar" class="alert alert-danger"&gt;
+    &lt;div&gt;meio&lt;/div&gt;
+&lt;/div&gt;
+
+$('#divConcatenar').prepend('inicio');
+$('#divConcatenar').append('fim');</pre>
+<div id="divConcatenar" class="alert alert-danger">
+    <div>meio</div>
+</div>
+
+<hr>
+<p>.before(), .after()</p>
+<pre>&lt;div id="divConcatenar2" class="alert alert-danger"&gt;
+    &lt;div&gt;meio&lt;/div&gt;
+&lt;/div&gt;
+
+$('#divConcatenar2').before('inicio');
+$('#divConcatenar2').after('fim');</pre>
+<div id="divConcatenar2" class="alert alert-danger">
+    <div>meio</div>
+</div>
+
+<hr>
+<p>.remove(), .empty()</p>
+<pre>&lt;div id="divRemover" class="alert alert-info"&gt;
+ &lt;div id="divLimpeza"&gt;Conteudo&lt;/div&gt;
+&lt;/div&gt;
+&lt;input type="button" value="Limpar div" onclick="LimparEmpty()"&gt;
+&lt;input type="button" value="Popular div" onclick="PopularEmpty()"&gt;
+&lt;input type="button" value="Remover div" onclick="RemoverEmpty()"&gt;
+
+function LimparEmpty(){
+ $('#divLimpeza').empty();
+}
+function PopularEmpty(){
+ $('#divLimpeza').text('Novo conteudo');
+}
+function RemoverEmpty(){
+ $('#divRemover').remove();
+}</pre>
+<div id="divRemover" class="alert alert-info">
+ <div id="divLimpeza">Conteudo</div>
+</div>
+<input type="button" value="Limpar div" onclick="LimparEmpty()">
+<input type="button" value="Popular div" onclick="PopularEmpty()">
+<input type="button" value="Remover div" onclick="RemoverEmpty()">
+
+<hr>
+<p>.addClass(), .removeClass(), .toggleClass()</p>
+<pre></pre>
+<div id="areaClasse" class="alert alert-success">Area 1</div>
+<input type="button" value="Esconder com efeito vertical" onclick="EsconderSlideUp()">
+<input type="button" value="Mostrar com efeito vertical" onclick="MostrarSlideDown()">
+<input type="button" value="Alternar com efeito vertical" onclick="AlternarSlideToggle()">
+<hr>
+<p><a href="https://www.w3schools.com/jquery/jquery_dimensions.asp">width(), height(), innerWidth(), innerHeight(), outerWidth(), outerHeight()</a></p>
+
+      <hr>
+      <p>.parent() e .children()</p>
+      <pre>&lt;div id="pai"&gt;
+ &lt;div&gt;FILHO&lt;/div&gt;
+&lt;/div&gt;
+
+&lt;div&gt;
+ PAI
+ &lt;div id="filho"&gt;&lt;/div&gt;
+&lt;/div&gt;
+        
+$('#pai').children().text('Jquery filho');
+$('#filho').parent().text('Jquery pai');</pre>
+
+      <div id="pai">
+          <div>
+              FILHO
+            </div>
+        </div>
+
+        <div>
+          PAI
+          <div id="filho">
+            </div>
+        </div>
+
+        <hr>
+        <p>.find()</p>
+        <pre>&lt;div id="localizar"&gt;
+ &lt;div class="vermelho"&gt;&lt;/div&gt;
+ &lt;div class="azul"&gt;&lt;/div&gt;
+&lt;/div&gt;
+
+$('#localizar').find('.vermelho').text('cor vermelha');
+$('#localizar').find('.azul').text('cor azul');</pre>
+        <div id="externo">
+        <div id="localizar">
+<div class="vermelho"></div>
+<div class="azul"></div>
+        </div>
+        </div>
+
+<hr>
+<p>.closest() vs .parents()</p>
+<pre>&lt;div data-inf="raiz"&gt;
+    &lt;div data-inf="n1" data-inf2="ok" &gt;
+        &lt;ul&gt;
+            &lt;li&gt;1&lt;/li&gt;
+            &lt;li&gt;2&lt;/li&gt;
+            &lt;li&gt;&lt;span id="numero3"&gt;3&lt;span&gt;&lt;/li&gt;
+        &lt;/ul&gt;
+    &lt;/div&gt;
+&lt;/div&gt;
+
+var numeroC = $('#numero3').closest('div').data('inf');
+var numeroP = $('#numero3').parents('div').first().data('inf2');
+$('#divResultado').text(numeroC + ' - ' + numeroP);</pre>
+<div data-inf="raiz">
+    <div data-inf="n1" data-inf2="ok">
+        <ul>
+            <li>1</li>
+            <li>2</li>
+            <li><span id="numero3">3<span></li>
+        </ul>
+    </div>
+</div>
+<div id="divResultado"></div>
+
+        <hr>
+        <p>.prev() e .next()</p>
+        <pre>&lt;div&gt;
+ &lt;div id="caixa1"&gt;&lt;/div&gt;
+ &lt;div id="caixa2"&gt;&lt;/div&gt;
+&lt;/div&gt;
+        
+$('#caixa2').prev().text('CAIXA1');
+$('#caixa1').next().text('CAIXA2');</pre>
+        <div>
+            <div id="caixa1"></div>
+            <div id="caixa2"></div>
+        </div>
+
+<hr>
+<p>.siblings()</p>
+<pre>&lt;ul&gt;
+    &lt;li&gt;&lt;/li&gt;
+    &lt;li id="liAlvo"&gt;5&lt;/li&gt;
+    &lt;li&gt;&lt;/li&gt;
+&lt;/ul&gt;
+
+$('#liAlvo').siblings().text('11');</pre>
+<ul>
+    <li></li>
+    <li id="liAlvo">5</li>
+    <li></li>
+</ul>
+
+
+
+    </div><!--fim-->
+    </div>
+  </div>
+</div>
+
+</body>
+<script
+  src="https://code.jquery.com/jquery-1.12.4.min.js"
+  integrity="sha256-ZosEbRLbNQzLpnKIkEdrPv7lOy9C27hHQ+Xp8a4MxAQ=" crossorigin="anonymous"></script>
+<script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js" 
+integrity="sha384-Tc5IQib027qvyjSMfHjOMaLkfuWVxZxUPnCJA7l2mCWNIpG9mGCD8wGNIcPD7Txa" crossorigin="anonymous"></script>
+<script>
+$(document).ready(function () {
+//--jquery
+});
+</script>
+<script>
+      $('b').text('Jquery ok');
+      $('#div1').text('Jquery ok 2');
+      $('.div2').text('Jquery ok 3');
+
+      $('#divTexto').text('jquery texto');
+      $('#divHtml').html('<b>Jquery Html tag</b>');
+$('#inputValor').val('Jquery input texto');
+
+var classe = $('#divId').prop('class');
+var data = $('#divId').data('extra');
+$('#divId').text(classe + ' - ' + data);
+$('#c1').prop('checked', true);
+
+function LimparEmpty(){
+ $('#divLimpeza').empty();
+}
+function PopularEmpty(){
+ $('#divLimpeza').text('Novo conteudo');
+}
+function RemoverEmpty(){
+ $('#divRemover').remove();
+}
+
+$('#pai').children().text('Jquery filho');
+$('#filho').parent().text('Jquery pai');
+
+$('#localizar').find('.vermelho').text('cor vermelha');
+$('#localizar').find('.azul').text('cor azul');
+
+var numeroC = $('#numero3').closest('div').data('inf');
+var numeroP = $('#numero3').parents('div').first().data('inf2');
+$('#divResultado').text(numeroC + ' - ' + numeroP);
+
+$('#caixa2').prev().text('CAIXA1');
+$('#caixa1').next().text('CAIXA2');
+
+$('#liAlvo').siblings().text('11');
+
+$('#divConcatenar').prepend('inicio');
+$('#divConcatenar').append('fim');
+
+$('#divConcatenar2').before('inicio');
+$('#divConcatenar2').after('<b>fim</b>');
+      </script>
+</html>

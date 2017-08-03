@@ -1,0 +1,119 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+
+<title>GitHub Pages JS</title>
+<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css" >
+<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap-theme.min.css" >
+</head>
+<body>
+  <div class="container-fluid">
+  <div class="row">
+   <!-- -->
+      <div class="col-md-12">
+      <h1>JQuery</h1>
+      <h2>Effect</h2>
+      <p>Selectors</p>
+      <p>fontes: <a href="https://www.w3schools.com/jquery/jquery_ref_effects.asp">w3school ref</a>, 
+      <a href="http://api.jquery.com/category/effects/">Jquery API</a></p>
+      <p>.hide(), .show() e .toggle()</p>
+      <pre>&lt;b id="e1">teste&lt;/b&gt;
+&lt;input type="button" value="Esconder" onclick="Esconder()"&gt;
+&lt;input type="button" value="Mostrar" onclick="Mostrar()"&gt;
+&lt;input type="button" value="Alternar" onclick="Alternar()"&gt;
+      
+function Esconder(){
+    $('#e1').hide();
+}
+function Mostrar(){
+    $('#e1').show();
+}
+function Alternar(){
+    $('#e1').toggle();
+}</pre>
+
+      <b id="e1">teste</b>
+      <input type="button" value="Esconder" onclick="Esconder()">
+      <input type="button" value="Mostrar" onclick="Mostrar()">
+      <input type="button" value="Alternar" onclick="Alternar()">
+
+<hr>
+
+<p>.fadeOut() e .fadeIn()</p>
+      <pre>&lt;b id="e2">teste&lt;/b&gt;
+&lt;input type="button" value="Esconder" onclick="Esconder()"&gt;
+&lt;input type="button" value="Mostrar" onclick="Mostrar()"&gt;
+      
+function EsconderTempo(){    
+    $('#e2').fadeOut();
+}
+function MostrarTempo(){
+    $('#e2').fadeIn();    
+}
+function AlternarTempo(){
+    $('#e2').fadeToggle();    
+}</pre>
+
+      <b id="e2">teste</b>
+      <input type="button" value="Esconder com tempo" onclick="EsconderTempo()">
+      <input type="button" value="Mostrar com tempo" onclick="MostrarTempo()">
+      <input type="button" value="Alternar com tempo" onclick="AlternarTempo()">
+<hr>
+
+<p>.slideUp(), .slideDown() e .slideToggle()</p>
+<pre></pre>
+<div id="area1" style="padding: 30px;" class="alert alert-success">Area 1</div>
+    <input type="button" value="Esconder com efeito vertical" onclick="EsconderSlideUp()">
+    <input type="button" value="Mostrar com efeito vertical" onclick="MostrarSlideDown()">
+    <input type="button" value="Alternar com efeito vertical" onclick="AlternarSlideToggle()">
+
+
+<hr>
+      
+    </div><!--fim-->
+    </div>
+  </div>
+</div>
+
+</body>
+<script
+  src="https://code.jquery.com/jquery-1.12.4.min.js"
+  integrity="sha256-ZosEbRLbNQzLpnKIkEdrPv7lOy9C27hHQ+Xp8a4MxAQ=" crossorigin="anonymous"></script>
+<script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js" 
+integrity="sha384-Tc5IQib027qvyjSMfHjOMaLkfuWVxZxUPnCJA7l2mCWNIpG9mGCD8wGNIcPD7Txa" crossorigin="anonymous"></script>
+<script>
+function Esconder(){
+    $('#e1').hide();
+}
+function Mostrar(){
+    $('#e1').show();
+}
+function Alternar(){
+    $('#e1').toggle();
+}
+
+function EsconderTempo(){    
+    $('#e2').fadeOut();
+}
+function MostrarTempo(){
+    $('#e2').fadeIn();    
+}
+function AlternarTempo(){
+    $('#e2').fadeToggle();    
+}
+
+function EsconderSlideUp(){
+    //---esconde
+ $('#area1').slideUp();
+}
+function MostrarSlideDown(){
+    //---mostra
+ $('#area1').slideDown();
+}
+function AlternarSlideToggle(){
+ $('#area1').slideToggle();
+}
+      </script>
+</html>
